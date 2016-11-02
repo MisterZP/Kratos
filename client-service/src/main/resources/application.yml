@@ -13,9 +13,9 @@ eureka:
 spring:
   cloud:
     config:
-      uri: http://localhost:${config.port:9000}
+      uri: http://localhost:9000
       name: kratos
-      profile: ${config.profile:dev}
+      profile: dev
 
 logging:
   config: classpath:client_logback.xml
