@@ -1,21 +1,5 @@
 server:
   port: 9300
 
-eureka:
-  instance:
-    hostname: localhost
-    lease-renewal-interval-in-seconds: 1
-    lease-expiration-duration-in-seconds: 2
-  client:
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:9100/eureka/
-
-spring:
-  cloud:
-    config:
-      uri: http://localhost:${config.port:9000}
-      name: kratos
-      profile: ${config.profile:dev}
-
 logging:
   config: classpath:api_logback.xml

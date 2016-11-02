@@ -1,3 +1,17 @@
 spring:
+  cloud:
+    config:
+      uri: http://localhost:${config.port:9000}
+      name: kratos
+      profile: ${config.profile:dev}
   application:
-    name: api-service
+    name:  api-service
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:9100/eureka/
