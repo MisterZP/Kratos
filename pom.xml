@@ -21,5 +21,6 @@
         <module>api-service</module>
         <module>client-service</module>
         <module>kratos-common</module>
+        <module>common-model</module>
     </modules>
 </project>

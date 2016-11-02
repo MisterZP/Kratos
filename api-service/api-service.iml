@@ -11,6 +11,13 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="common-model" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.3.9" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.4" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.8" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />
     <orderEntry type="module" module-name="common-dao" />
     <orderEntry type="module" module-name="datasource-model" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-config:1.1.0.RELEASE" level="project" />
@@ -49,13 +56,7 @@
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.2.4" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:4.1.1" level="project" />
-    <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.3.9" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.3" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.4" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.8" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:0.9.4" level="project" />
-    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
     <orderEntry type="module" module-name="kratos-common" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.4.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />

@@ -5,17 +5,16 @@ import tk.mybatis.mapper.entity.IDynamicTableName;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.sql.Timestamp;
 
 @Data
-public class App implements IDynamicTableName{
+public class App implements IDynamicTableName {
     @Transient//非表字段，表名
     private String dynamicTableName = "App";
     @Id
     @Column(name = "appId")
-	private Long appId;
+    private Long appId;
     @Column(name = "appKey")
     private String appKey;
     @Column(name = "secretKey")
