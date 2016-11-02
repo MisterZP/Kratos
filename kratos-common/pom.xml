@@ -9,47 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kratos</groupId>
-    <artifactId>api-service</artifactId>
+    <artifactId>kratos-common</artifactId>
     <properties>
         <fast.json.version>1.2.8</fast.json.version>
         <jakson.version>2.4.3</jakson.version>
         <lombok.version>1.16.4</lombok.version>
-        <logback.qos.version>1.1.6</logback.qos.version>
-        <logback.ext.version>0.1.2</logback.ext.version>
+        <commons.io.version>2.2</commons.io.version>
+        <commons.lang.version>2.6</commons.lang.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>com.kratos.ApiApplication</start-class>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.kratos</groupId>
-            <artifactId>common-dao</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kratos</groupId>
-            <artifactId>kratos-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-    　　　　<groupId>org.springframework.cloud</groupId>
-    　　　　<artifactId>spring-cloud-starter-eureka</artifactId>
-    　　</dependency>
-        <dependency>
-        　　<groupId>org.springframework.cloud</groupId>
-        　　<artifactId>spring-cloud-starter-hystrix</artifactId>
-        　　</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,25 +54,27 @@
             <version>${jakson.version}</version>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.qos.version}</version>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons.lang.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.logback-extensions</groupId>
-            <artifactId>logback-ext-spring</artifactId>
-            <version>${logback.ext.version}</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
         </dependency>
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Camden.SR1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 </project>

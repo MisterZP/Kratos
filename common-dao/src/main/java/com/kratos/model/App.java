@@ -1,17 +1,21 @@
 package com.kratos.model;
 
 import lombok.Data;
+import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.IDynamicTableName;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Data
 @Table(name = "App")
-public class App implements Serializable{
-	private transient static final long serialVersionUID = -2129911785381753227L;
+public class App implements IDynamicTableName{
+    @Transient//非表字段，表名
+    private String dynamicTableName;
     @Id
     @Column(name = "appId")
 	private Long appId;

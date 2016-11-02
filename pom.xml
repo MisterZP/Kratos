@@ -20,5 +20,6 @@
         <module>common-dao</module>
         <module>api-service</module>
         <module>client-service</module>
+        <module>kratos-common</module>
     </modules>
 </project>
