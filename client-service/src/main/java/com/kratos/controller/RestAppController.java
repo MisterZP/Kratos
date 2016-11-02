@@ -10,11 +10,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by zengping on 2016/11/2.
  */
-@RequestMapping("rest")
+@RestController
+@RequestMapping("/rest")
 public class RestAppController {
     @Autowired
     private RestWrapper restWrapper;
