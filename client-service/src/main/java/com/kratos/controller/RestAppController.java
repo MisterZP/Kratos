@@ -24,6 +24,6 @@ public class RestAppController {
     @RequestMapping("/find/{appId}")
     public ResponseEntity<CommonResponse<App>> get4AppId(@PathVariable("appId") Long appId){
         return restWrapper.execute("http://api-service/api/find/" + appId,
-                HttpMethod.POST, HttpEntity.EMPTY, new TypeReference<ResponseEntity<CommonResponse<App>>>(){});
+                HttpMethod.POST, HttpEntity.EMPTY, new TypeReference<CommonResponse<App>>(){});
     }
 }

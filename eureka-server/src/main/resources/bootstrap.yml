@@ -9,4 +9,5 @@ eureka:
   instance:
     hostname: localhost
     health-check-url-path: /health
-    home-page-url: /info
+    status-page-url-path: /info
+    home-page-url-path: /

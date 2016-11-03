@@ -21,7 +21,7 @@ public class ApiController {
     private AppService appService;
 
     @RequestMapping("/find/{appId}")
-    public CommonResponse<ResponseEntity<App>> findApp4Id(@PathVariable("appId") Long id){
-        return CommonResponse.OK(HttpStatus.OK.value(), new ResponseEntity<>(appService.getById(id), HttpStatus.OK));
+    public ResponseEntity<CommonResponse<App>> findApp4Id(@PathVariable("appId") Long id){
+        return new ResponseEntity<>(CommonResponse.OK(HttpStatus.OK.value(), appService.getById(id)), HttpStatus.OK);
     }
 }

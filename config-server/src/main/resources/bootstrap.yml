@@ -12,5 +12,7 @@ eureka:
     lease-expiration-duration-in-seconds: 2
     hostname: localhost
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:9100/eureka/
