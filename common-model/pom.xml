@@ -47,5 +47,10 @@
             <artifactId>jackson-core</artifactId>
             <version>${jakson.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jakson.version}</version>
+        </dependency>
     </dependencies>
 </project>

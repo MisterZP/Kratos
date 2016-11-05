@@ -19,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.kratos.ClientApplication</start-class>
         <java.version>1.8</java.version>
+        <spring.data.version>1.2.1.RELEASE</spring.data.version>
     </properties>
     <dependencies>
         <dependency>
@@ -77,6 +78,11 @@
             <version>${jakson.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jakson.version}</version>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.qos.version}</version>
@@ -85,6 +91,11 @@
             <groupId>org.logback-extensions</groupId>
             <artifactId>logback-ext-spring</artifactId>
             <version>${logback.ext.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons-core</artifactId>
+            <version>${spring.data.version}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
