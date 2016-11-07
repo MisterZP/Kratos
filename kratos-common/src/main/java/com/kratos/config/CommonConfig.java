@@ -1,9 +1,11 @@
 package com.kratos.config;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -31,6 +33,11 @@ public class CommonConfig {
                 break;
             }
         }
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        BeanUtils.copyProperties(restTemplate.getRequestFactory(), requestFactory);
+        requestFactory.setReadTimeout(10 * 1000);//读写超时时间
+        requestFactory.setConnectTimeout(10 * 1000);//连接超时时间
+        restTemplate.setRequestFactory(requestFactory);
         return restTemplate;
     }
 

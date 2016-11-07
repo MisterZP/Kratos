@@ -20,6 +20,8 @@
         <start-class>com.kratos.ClientApplication</start-class>
         <java.version>1.8</java.version>
         <spring.data.version>1.2.1.RELEASE</spring.data.version>
+        <ver.common.fileupload>1.2.2</ver.common.fileupload>
+        <ver.common.io>2.4</ver.common.io>
     </properties>
     <dependencies>
         <dependency>
@@ -96,6 +98,16 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons-core</artifactId>
             <version>${spring.data.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${ver.common.fileupload}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${ver.common.io}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

@@ -30,7 +30,7 @@ public class ApiFinanceController {
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public ResponseEntity<CommonResponse<Page<Finance>>> getFinances(@RequestBody FinanceReq req) throws JsonProcessingException {
-        LOGGER.info("request param: {}", new ObjectMapper().writer().writeValueAsString(req));
+        LOGGER.info("request param: {}", new ObjectMapper().writeValueAsString(req));
         List<Finance> finances = new ArrayList<>();
         Finance finance = new Finance();
         finance.setCdnUrl("http://g3.letv.cn/228/1/8/tvstore_dev/0/1472118060_fe76ad974427ff4f6ba8ea228efcd32c.zip?tag=iptv&b=1800");
