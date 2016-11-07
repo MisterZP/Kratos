@@ -31,7 +31,7 @@ public class Finance {
         clone.setTime(new String(time));
         clone.setCdnUrl(new String(cdnUrl));
         clone.notsettled = this.notsettled;
-        clone.months = Collections.unmodifiableList(new ArrayList<String>(months.size()));
+        clone.months = Collections.unmodifiableList(this.months);
         return clone;
     }
 

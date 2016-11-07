@@ -41,7 +41,7 @@ public class ApiFinanceController {
         finance.setNotsettled(true);
         finance.setStatusName("未结算");
         finance.setPlatName("手机");
-        finance.setMonths(Arrays.asList(new String[]{"2016-09", "2016-10","2016-11"}));
+        finance.setMonths(Arrays.asList(new String[]{"2016年09月"}));
         if(StringUtils.isNotBlank(req.getContractName()) && finance.equals(req.getContractName())){
             finances.add(finance);
         }else if (StringUtils.isBlank(req.getContractName())){
@@ -58,13 +58,12 @@ public class ApiFinanceController {
         finance = finance.createFinance4This();
         finance.setContractName("功夫熊猫");
         finance.setNotsettled(false);
-        finance.setMonths(Arrays.asList(new String[]{"2016-08", "2016-09"}));
+        finance.setMonths(Arrays.asList(new String[]{"2016年08月", "2016年09月"}));
         if(StringUtils.isNotBlank(req.getContractName()) && finance.equals(req.getContractName())){
             finances.add(finance);
         }else if (StringUtils.isBlank(req.getContractName())){
             finances.add(finance);
         }
-        finances.add(finance);
         Page<Finance> page = new Page(1, 10);
         page.setDatas(finances);
         return new ResponseEntity<>(CommonResponse.OK(page), HttpStatus.OK);
