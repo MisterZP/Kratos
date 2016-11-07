@@ -6,11 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import java.util.ArrayList;
+import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -21,8 +20,17 @@ public class CommonConfig {
 
     @Bean
     @LoadBalanced
-    public RestTemplate restTemplate() {
+    public RestTemplate getRestTemplate(){
         RestTemplate restTemplate = new RestTemplate();
+        List<HttpMessageConverter<?>> converters = restTemplate.getMessageConverters();
+        for (HttpMessageConverter converter: converters) {
+            if(converter instanceof StringHttpMessageConverter){
+                converters.remove(converter);
+                HttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
+                converters.add(stringHttpMessageConverter);
+                break;
+            }
+        }
         return restTemplate;
     }
 
