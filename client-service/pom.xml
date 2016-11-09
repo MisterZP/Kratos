@@ -11,17 +11,7 @@
     <groupId>com.kratos</groupId>
     <artifactId>client-service</artifactId>
     <properties>
-        <fast.json.version>1.2.8</fast.json.version>
-        <jakson.version>2.4.3</jakson.version>
-        <lombok.version>1.16.4</lombok.version>
-        <logback.qos.version>1.1.6</logback.qos.version>
-        <logback.ext.version>0.1.2</logback.ext.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.kratos.ClientApplication</start-class>
-        <java.version>1.8</java.version>
-        <spring.data.version>1.2.1.RELEASE</spring.data.version>
-        <ver.common.fileupload>1.2.2</ver.common.fileupload>
-        <ver.common.io>2.4</ver.common.io>
     </properties>
     <dependencies>
         <dependency>
@@ -62,52 +52,42 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fast.json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.qos.version}</version>
         </dependency>
         <dependency>
             <groupId>org.logback-extensions</groupId>
             <artifactId>logback-ext-spring</artifactId>
-            <version>${logback.ext.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons-core</artifactId>
-            <version>${spring.data.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>${ver.common.fileupload}</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${ver.common.io}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

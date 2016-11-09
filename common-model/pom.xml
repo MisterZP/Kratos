@@ -10,47 +10,30 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kratos</groupId>
     <artifactId>common-model</artifactId>
-    <properties>
-        <java.version>1.8</java.version>
-        <mapper.version>3.3.9</mapper.version>
-        <lomok.version>1.16.8</lomok.version>
-        <fast.json.version>1.2.8</fast.json.version>
-        <jakson.version>2.4.3</jakson.version>
-        <com.alibaba.version>1.0.11</com.alibaba.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-    </properties>
     <dependencies>
-        <!--通用Mapper -->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
-            <version>${mapper.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fast.json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
     </dependencies>
 </project>

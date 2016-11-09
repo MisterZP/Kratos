@@ -1,8 +1,8 @@
 package com.kratos.model;
 
+import com.kratos.req.FinanceReq;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,19 +14,20 @@ public class Finance {
     private String contractName;
     private String platName;
     private String statusName;
-    private String status;
+    private Status status;
     private String number;
     private List<String> months;
     private String time;
     private String cdnUrl;
     private boolean notsettled;
+    private String reason;
 
     public Finance createFinance4This() {
         Finance clone = new Finance();
         clone.setContractName(new String(contractName));
         clone.setPlatName(new String(platName));
         clone.setStatusName(new String(statusName));
-        clone.setStatus(new String(status));
+        clone.setStatus(this.status);
         clone.setNumber(new String(number));
         clone.setTime(new String(time));
         clone.setCdnUrl(new String(cdnUrl));
@@ -36,9 +37,24 @@ public class Finance {
     }
 
     public enum Status {
-        NOT_SETTLED,
-        SETTLEMENT,
-        CLOSED
+        NOT_SETTLED(0),
+        SETTLEMENT(1),
+        REVIEW(1),
+        NOT_PASS(1),
+        DETERMINED(1),
+        MAILED(1),
+        SENT(1),
+        WAITING_MONEY(1),
+        CLOSED(2);
+        private final int code;
+
+        Status(int code) {
+            this.code = code;
+        }
+
+        public int getCode() {
+            return code;
+        }
     }
 }
 

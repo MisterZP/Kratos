@@ -3,10 +3,7 @@ package com.kratos.model;
 import lombok.Data;
 import tk.mybatis.mapper.entity.IDynamicTableName;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Data
@@ -15,6 +12,7 @@ public class App implements IDynamicTableName {
     @Transient//非表字段，表名
     private String dynamicTableName = "App";
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appId")
     private Long appId;
     @Column(name = "appKey")

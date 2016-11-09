@@ -18,7 +18,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.4.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.4.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.7" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.6" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.1.7" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.21" level="project" />

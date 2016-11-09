@@ -29,9 +29,9 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-ribbon:1.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-archaius:1.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.3" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.4" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.10" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.8" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.3" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />

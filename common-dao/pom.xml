@@ -10,20 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kratos</groupId>
     <artifactId>common-dao</artifactId>
-    <properties>
-        <java.version>1.8</java.version>
-        <mybatis.version>3.3.1</mybatis.version>
-        <mybatis.spring.version>1.2.4</mybatis.spring.version>
-        <mybatis.generator.version>1.3.2</mybatis.generator.version>
-        <mapper.version>3.3.9</mapper.version>
-        <pagehelper.version>4.1.1</pagehelper.version>
-        <lomok.version>1.16.8</lomok.version>
-        <fast.json.version>1.2.8</fast.json.version>
-        <jakson.version>2.4.3</jakson.version>
-        <com.alibaba.version>1.0.11</com.alibaba.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>com.kratos</groupId>
@@ -35,61 +21,47 @@
             <artifactId>datasource-model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--Mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>${mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis.spring.version}</version>
         </dependency>
-        <!-- Mybatis Generator -->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
-            <version>${mybatis.generator.version}</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
-        <!--分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>${pagehelper.version}</version>
         </dependency>
-        <!--通用Mapper -->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
-            <version>${mapper.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fast.json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jakson.version}</version>
         </dependency>
     </dependencies>
 </project>

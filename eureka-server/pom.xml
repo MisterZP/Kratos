@@ -11,9 +11,7 @@
     <groupId>com.kratos</groupId>
     <artifactId>eureka-server</artifactId>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.kratos.EurekaApplication</start-class>
-        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
