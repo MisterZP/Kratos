@@ -3,7 +3,7 @@ spring:
     config:
       uri: http://localhost:${config.port:9000}
       name: kratos
-      profile: ${config.profile:dev}
+      profile: ${config.profile:dev,redis}
   application:
     name:  api-service
 

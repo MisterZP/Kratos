@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ApiApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(ApiApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
         LOGGER.info("\n启动成功：\n" +

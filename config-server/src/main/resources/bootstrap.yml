@@ -5,7 +5,8 @@ spring:
         git:
           uri: https://github.com/MisterZP/Kratos.git
           search-paths: config-repository
-
+          username: fangchengyuwe@gmail.com
+          password: fangchengyuwe126
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 1

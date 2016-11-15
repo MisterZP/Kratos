@@ -6,6 +6,8 @@ import com.kratos.entity.CommonResponse;
 import com.kratos.entity.Page;
 import com.kratos.model.App;
 import com.kratos.model.Finance;
+import com.kratos.redis.shard.CacheClient;
+import com.kratos.redis.shard.ShardRedisCallback;
 import com.kratos.req.FinanceReq;
 import com.kratos.wrapper.RestWrapper;
 import org.slf4j.Logger;
@@ -13,8 +15,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import redis.clients.jedis.ShardedJedis;
 
 /**
  * Created by zengping on 2016/11/2.
@@ -25,6 +29,8 @@ public class RestAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RestAppController.class);
     @Autowired
     private RestWrapper restWrapper;
+    @Autowired
+    private CacheClient cacheClient;
 
     @RequestMapping("/find/{appId}")
     public ResponseEntity<CommonResponse<App>> get4AppId(@PathVariable("appId") Long appId){
@@ -42,5 +48,25 @@ public class RestAppController {
         HttpEntity<String> formEntity = new HttpEntity<>(new ObjectMapper().writeValueAsString(req), headers);*/
         return restWrapper.execute("http://api-service/finance/list",
                 HttpMethod.POST, new HttpEntity(req), new TypeReference<CommonResponse<Page<Finance>>>(){});
+    }
+
+    @RequestMapping(value = "/redis/test_{redisV}", method = RequestMethod.POST)
+    public ResponseEntity<CommonResponse<Integer>> get4AppId(@PathVariable("redisV") final Integer redisV) throws JsonProcessingException {
+        LOGGER.info("redis test value: {}", redisV);
+        cacheClient.execute(new ShardRedisCallback<Integer>() {
+            @Override
+            public Integer doWithRedis(ShardedJedis shardedJedis) {
+                shardedJedis.set("spring_cloud_test", redisV.toString());
+                return redisV;
+            }
+        });
+        Integer testV = cacheClient.execute(new ShardRedisCallback<Integer>() {
+            @Override
+            public Integer doWithRedis(ShardedJedis shardedJedis) {
+                String v = shardedJedis.get("spring_cloud_test");
+                return Integer.parseInt(v);
+            }
+        });
+        return new ResponseEntity<>(CommonResponse.OK(HttpStatus.OK.value(), testV), HttpStatus.OK);
     }
 }
