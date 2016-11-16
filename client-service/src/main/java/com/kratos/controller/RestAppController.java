@@ -17,6 +17,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.*;
 import redis.clients.jedis.ShardedJedis;
 
@@ -31,6 +32,8 @@ public class RestAppController {
     private RestWrapper restWrapper;
     @Autowired
     private CacheClient cacheClient;
+    @Autowired
+    private JmsTemplate jmsTemplate;
 
     @RequestMapping("/find/{appId}")
     public ResponseEntity<CommonResponse<App>> get4AppId(@PathVariable("appId") Long appId){
@@ -68,5 +71,11 @@ public class RestAppController {
             }
         });
         return new ResponseEntity<>(CommonResponse.OK(HttpStatus.OK.value(), testV), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/amqp/test_{message}", method = RequestMethod.POST)
+    public ResponseEntity<CommonResponse> get4AppId(@PathVariable("message") final String redisV) throws JsonProcessingException {
+        jmsTemplate.convertAndSend(redisV);
+        return new ResponseEntity<CommonResponse>(CommonResponse.OK(redisV), HttpStatus.OK);
     }
 }
