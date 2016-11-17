@@ -3,6 +3,7 @@ package com.kratos.config;
 import org.apache.qpid.client.AMQAnyDestination;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -32,12 +33,12 @@ import java.util.Properties;
 @Configuration
 public class CommonConfig {
 
-    private final String[] qpidKeys = {"java.naming.factory.initial",
-                "destination.topicExchange",
-                "connectionfactory.qpidConnectionfactory"};
+    @Value("${qpid.associate.key}")
+    private String[] qpidAssociate;
 
     @Autowired
     Environment enviroment;
+
     @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate(){
@@ -74,7 +75,7 @@ public class CommonConfig {
     public JndiTemplate jndiTemplate() throws IOException {
         JndiTemplate jndiTemplate = new JndiTemplate();
         Properties properties = new Properties();
-        for (String key: qpidKeys) {
+        for (String key: qpidAssociate) {
             properties.put(key, enviroment.getProperty(key));
         }
         jndiTemplate.setEnvironment(properties);
