@@ -175,9 +175,9 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
+    <!--<build>
         <plugins>
-            <!-- 把依赖的jar包拷到lib目录下 -->
+            &lt;!&ndash; 把依赖的jar包拷到lib目录下 &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -197,7 +197,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- 以utf-8编码拷贝配置文件 -->
+            &lt;!&ndash; 以utf-8编码拷贝配置文件 &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -211,7 +211,7 @@
                         </goals>
                         <configuration>
                             <encoding>UTF-8</encoding>
-                            <outputDirectory>${project.build.directory}</outputDirectory><!-- 把配置文件拷到和jar包同一个路径下 -->
+                            <outputDirectory>${project.build.directory}</outputDirectory>&lt;!&ndash; 把配置文件拷到和jar包同一个路径下 &ndash;&gt;
                             <resources>
                                 <resource>
                                     <directory>src/main/resources/</directory>
@@ -231,5 +231,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 </project>
