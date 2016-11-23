@@ -1,4 +1,5 @@
 server:
   port: 9300
+
 logging:
-  config: api_logback.xml
+  config: classpath:api_logback.xml

@@ -1,6 +1,5 @@
 server:
   port: 9400
+
 logging:
-  config: client_logback.xml
-
-
+  config: classpath:client_logback.xml
