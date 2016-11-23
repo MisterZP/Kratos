@@ -9,10 +9,10 @@
 	</appender>
 	<!--INFO 日志：-->
 	<appender name="INFO_FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${APP_HOME}/logs/client_info.log</file>
+		<file>${APP_HOME}/client_info.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- rollover daily -->
-			<fileNamePattern>${APP_HOME}/logs/client_info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${APP_HOME}/client_info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxHistory>60</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<!--日志文件最大的大小-->
@@ -25,10 +25,10 @@
 	</appender>
 	<!--ERROR 日志：-->
 	<appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${APP_HOME}/logs/client_error.log</file>
+		<file>${APP_HOME}/client_error.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- rollover daily -->
-			<fileNamePattern>${APP_HOME}/logs/client_error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${APP_HOME}/client_error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxHistory>60</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<!--日志文件最大的大小-->
