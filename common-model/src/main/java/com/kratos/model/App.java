@@ -1,16 +1,15 @@
 package com.kratos.model;
 
 import lombok.Data;
-import tk.mybatis.mapper.entity.IDynamicTableName;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Data
 @Table(name="App")
-public class App implements IDynamicTableName {
-    @Transient//非表字段，表名
-    private String dynamicTableName = "App";
+@Document(indexName = "App", type = "App", shards = 1, replicas = 0)
+public class App{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appId")

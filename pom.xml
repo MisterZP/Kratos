@@ -35,6 +35,9 @@
         <redis.client>2.8.1</redis.client>
         <qpid.version>0.32</qpid.version>
         <java.version>1.8</java.version>
+        <es.version>1.4.2.RELEASE</es.version>
+        <spring-jms.version>4.3.3.RELEASE</spring-jms.version>
+        <jms.api.version>2.0.1</jms.api.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
@@ -164,14 +167,19 @@
                 <version>${qpid.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${es.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jms</artifactId>
-                <version>4.3.3.RELEASE</version>
+                <version>${spring-jms.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.jms</groupId>
                 <artifactId>javax.jms-api</artifactId>
-                <version>2.0.1</version>
+                <version>${jms.api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

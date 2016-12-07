@@ -1,6 +1,5 @@
 package com.kratos.model;
 
-import com.kratos.req.FinanceReq;
 import lombok.Data;
 
 import java.util.Collections;
