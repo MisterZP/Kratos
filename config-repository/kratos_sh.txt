@@ -1,0 +1,16 @@
+rm -rf eureka-server-1.0-SNAPSHOT.jar
+rm -rf config-server-1.0-SNAPSHOT.jar
+rm -rf api-service-1.0-SNAPSHOT.jar
+rm -rf client-service-1.0-SNAPSHOT.jar
+ps aux|grep [e]ureka-server|awk '{system("kill -9 "$2)}'
+ps aux|grep [c]onfig-server|awk '{system("kill -9 "$2)}'
+ps aux|grep [a]pi-service|awk '{system("kill -9 "$2)}'
+ps aux|grep [c]lient-service|awk '{system("kill -9 "$2)}'
+curl -O http://10.75.136.2:9700/job/kratos/ws/eureka-server/target/eureka-server-1.0-SNAPSHOT.jar
+curl -O http://10.75.136.2:9700/job/kratos/ws/config-server/target/config-server-1.0-SNAPSHOT.jar
+curl -O http://10.75.136.2:9700/job/kratos/ws/api-service/target/api-service-1.0-SNAPSHOT.jar
+curl -O http://10.75.136.2:9700/job/kratos/ws/client-service/target/client-service-1.0-SNAPSHOT.jar
+nohup java -jar eureka-server-1.0-SNAPSHOT.jar > logs/console_eureka.out 2>&1 &
+nohup java -jar config-server-1.0-SNAPSHOT.jar > logs/console_config.out 2>&1 &
+nohup java -jar api-service-1.0-SNAPSHOT.jar > logs/console_api.out 2>&1 &
+nohup java -jar client-service-1.0-SNAPSHOT.jar > logs/console_client.out 2>&1 &
