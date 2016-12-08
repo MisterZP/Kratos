@@ -22,6 +22,7 @@ import java.net.UnknownHostException;
 @EnableConfigurationProperties(value = EsBean.class)
 @EnableElasticsearchRepositories(basePackages = "com.kratos.repository")
 public class EsConfig {
+
     @Resource
     private EsBean esBean;
 
