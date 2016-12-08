@@ -16,4 +16,6 @@ public class EsBean {
     private String host;
     private int port;
     private String timeOut;
+    private boolean sniff;
+    private String clusterName;
 }

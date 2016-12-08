@@ -1,16 +1,19 @@
 package com.kratos.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.*;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
 @Data
 @Table(name="App")
-@Document(indexName = "App", type = "App", shards = 1, replicas = 0)
+@Document(indexName = "app", type = "app", shards = 1, replicas = 0)
 public class App{
     @Id
+    @org.springframework.data.annotation.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appId")
     private Long appId;

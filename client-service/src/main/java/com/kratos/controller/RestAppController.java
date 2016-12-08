@@ -84,7 +84,7 @@ public class RestAppController {
         return new ResponseEntity<CommonResponse>(CommonResponse.OK(redisV), HttpStatus.OK);
     }
 
-    @RequestMapping("/save/{appId}")
+    @RequestMapping("/save_es/{appId}")
     public ResponseEntity<CommonResponse<App>> saveApp2Es(@PathVariable("appId") Long appId) {
         ResponseEntity<CommonResponse<App>> response = restWrapper.execute("http://api-service/api/find/" + appId,
                 HttpMethod.POST, HttpEntity.EMPTY, new TypeReference<CommonResponse<App>>() {
@@ -96,7 +96,7 @@ public class RestAppController {
         return response;
     }
 
-    @RequestMapping("/save/{appId}")
+    @RequestMapping("/search_es/{appId}")
     public ResponseEntity<CommonResponse<App>> findApp4Es(@PathVariable("appId") Long appId) {
         return new ResponseEntity(CommonResponse.OK(HttpStatus.OK.value(), elasticRepository.findByAppIdOrAppKey(appId, null)), HttpStatus.OK);
     }

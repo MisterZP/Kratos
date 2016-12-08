@@ -3,8 +3,8 @@ package com.kratos.config;
 import com.kratos.entity.EsBean;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.elasticsearch.common.transport.TransportAddress;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 import javax.annotation.Resource;
-import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
 /**
@@ -21,16 +21,16 @@ import java.net.UnknownHostException;
  */
 @Configuration
 @EnableConfigurationProperties(value = EsBean.class)
-@EnableElasticsearchRepositories(basePackages = "co.paan.repository")
+@EnableElasticsearchRepositories(basePackages = "com.kratos.repository")
 public class EsConfig {
     @Resource
     private EsBean esBean;
 
     @Bean
     public Client client() throws UnknownHostException {
-        TransportClient client = TransportClient.builder().build();
-        TransportAddress address = new InetSocketTransportAddress(InetAddress.getByName(esBean.getHost()), esBean.getPort());
-        client.addTransportAddress(address);
+        TransportClient client = TransportClient.builder()
+                .settings(Settings.builder().put("cluster.name", esBean.getClusterName()).put("client.transport.sniff", esBean.isSniff())).build();
+        client.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(esBean.getHost(), esBean.getPort())));
         return client;
     }
 
