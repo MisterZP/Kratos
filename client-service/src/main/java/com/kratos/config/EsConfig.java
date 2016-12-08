@@ -29,8 +29,8 @@ public class EsConfig {
     @Bean
     public Client client() throws UnknownHostException {
         TransportClient client = TransportClient.builder()
-                .settings(Settings.builder().put("cluster.name", esBean.getClusterName()).put("client.transport.sniff", esBean.isSniff())).build();
-        client.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(esBean.getHost(), esBean.getPort())));
+                .settings(Settings.builder().put("cluster.name", esBean.getClusterName()).put("client.transport.sniff", esBean.isSniff())).build()
+                .addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(esBean.getHost(), esBean.getPort())));
         return client;
     }
 
