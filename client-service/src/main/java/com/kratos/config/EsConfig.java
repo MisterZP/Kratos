@@ -8,7 +8,6 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
@@ -35,7 +34,7 @@ public class EsConfig {
     }
 
     @Bean
-    public ElasticsearchOperations elasticsearchTemplate(Client client) throws UnknownHostException {
+    public ElasticsearchTemplate elasticsearchTemplate(Client client) throws UnknownHostException {
         ElasticsearchTemplate est = new ElasticsearchTemplate(client);
         est.setSearchTimeout(esBean.getTimeOut());
         return est;
