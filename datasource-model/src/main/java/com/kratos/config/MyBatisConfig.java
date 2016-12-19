@@ -11,9 +11,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.embedded.FilterRegistrationBean;
-import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -39,7 +39,7 @@ public class MyBatisConfig{
     @Autowired
     DruidFilterBean druidFilterBean;
 
-    @Bean
+    /*@Bean
     public ServletRegistrationBean druidServlet() {
         //设置监控登陆密码
         Map<String, String> initParameters = new HashMap<>();
@@ -57,7 +57,7 @@ public class MyBatisConfig{
         filterRegistrationBean.addUrlPatterns(druidFilterBean.getUrlPatterns());
         filterRegistrationBean.addInitParameter("exclusions", druidFilterBean.getExclusions());
         return filterRegistrationBean;
-    }
+    }*/
 
     @Bean(name = "dataSource", initMethod = "init", destroyMethod = "close")
     public DataSource dataSource() throws SQLException {

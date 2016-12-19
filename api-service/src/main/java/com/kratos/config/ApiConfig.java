@@ -1,6 +1,8 @@
 package com.kratos.config;
 
+import com.kratos.servlet.DruidServlet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @EnableEurekaClient
 @EnableHystrix
+@ServletComponentScan(basePackageClasses = DruidServlet.class)
 public class ApiConfig {
 
     @Autowired
