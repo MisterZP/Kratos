@@ -49,6 +49,7 @@
         <module>kratos-common</module>
         <module>common-model</module>
         <module>redis-module</module>
+        <module>springdata-test</module>
     </modules>
     <dependencyManagement>
         <dependencies>

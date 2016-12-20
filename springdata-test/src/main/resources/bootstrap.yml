@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9000
+      name: kratos
+      profile: test
+  application:
+    name: data-test
+  redis:
+    host: 10.11.146.231
+    port: 6379
+    password: aN3eg2Ak@
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+#    cluster:
+#      nodes:
+#        10.11.146.231:6379,
+#        10.11.146.231:6380
+#      max-redirects: 1
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:9100/eureka/
